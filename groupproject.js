@@ -1,12 +1,9 @@
-var next = function() {
-    
-};
 var genreselector = function(event) {
     console.log("Genreding");
 };
 var myRequest = new XMLHttpRequest();
     var method = "GET";
-    var url = "https://api.themoviedb.org/3/discover/movie?api_key=c035796a5a47aa7f45bf51d005852512&page=2";
+    var url = "https://api.themoviedb.org/3/discover/movie?api_key=c035796a5a47aa7f45bf51d005852512&page=10";
            
         myRequest.open(method, url);
         myRequest.send();
@@ -31,8 +28,7 @@ myRequest.onreadystatechange = function () {
             /*if (dataParsed.results[i].genre_ids[80]) {
                 MovieArray.push(dataParsed.results[i].title)
             }*/
-     }
-        
+        }
     }
         
 };
@@ -72,3 +68,12 @@ var selectmenu=document.getElementById("mymenu");
 
 
 //console.log("its working")
+
+/*function getCurrentMovieIndex() {
+    return MovieArray.indexOf(document.getElementById("mymenu").src);
+    }
+
+var next = function() {
+nextMovie = (getCurrentMovieIndex() + 1) % MovieArray.length;
+document.getElementById("mymenu").src = MovieArray[nextMovie];
+};*/
